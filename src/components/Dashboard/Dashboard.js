@@ -1,23 +1,24 @@
 import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import AddCategory from './AddCategory';
 
 const Dashboard = () => {
     return (
-        <div className='bg-red-300'>
-            <div class="drawer drawer-mobile">
-                <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-                <div class="drawer-content flex flex-col items-center justify-center">
-                    {/* <!-- Page content here --> */}
-                    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+        <div class="drawer drawer-mobile">
+            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content flex flex-col items-center justify-center">
+                <Outlet/>
+                <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
-                </div>
-                <div class="drawer-side bg-red-600 mt-20 z-10">
-                    <label for="my-drawer-2" class="drawer-overlay"></label>
-                    <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
-                        {/* <!-- Sidebar content here --> */}
-                        <li><a>Sidebar Item 1</a></li>
-                        <li><a>Sidebar Item 2</a></li>
-                    </ul>
-                </div>
+            </div>
+            <div class="drawer-side mt-20 bg-green-300">
+                <label for="my-drawer-2" class="drawer-overlay"></label>
+                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content bg-blue-300">
+                    {/* <!-- Sidebar content here --> */}
+                    <li><Link to='/dashboard/addcategory'>বিভাগ যোগ করুন</Link></li>
+                    <li><Link to='/dashboard/addaudio'>ওডিও যোগ করুন</Link></li>
+                </ul>
+
             </div>
         </div>
     );
