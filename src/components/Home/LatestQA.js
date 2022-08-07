@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import ReactAudioPlayer from 'react-audio-player';
 import { Link } from 'react-router-dom';
 
-const LatestBoyans = () => {
+const LatestQA = () => {
     const [boyans, setboyans] = useState([]);
 
     useEffect(() => {
@@ -15,7 +14,7 @@ const LatestBoyans = () => {
     }, [])
     return (
         <div className='w-11/12 mx-auto'>
-            <h1 className='my-16 text-3xl border-b-4 border-accent font-bold mt-8 inline-block'>সাম্প্রতিক বয়ান সমূহ</h1>
+            <h1 className='my-16 text-3xl border-b-4 border-accent font-bold mt-8 inline-block'>সাম্প্রতিক প্রশ্ন-উত্তর সমূহ</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
                     boyans.slice(0,6).map(boyan => <div className='shadow-2xl p-5 rounded-lg text-left'>
@@ -31,10 +30,10 @@ const LatestBoyans = () => {
                 }
             </div>
             <div className='text-right my-4'>
-            <Link to='/allboyans' className='btn btn-md btn-accent font-bold text-white text-right'>সকল বয়ান শুনুন</Link>
+            <Link to='/allboyans' className='btn btn-md btn-accent font-bold text-white text-right'>সকল প্রশ্ন-উত্তর শুনুন</Link>
             </div>
         </div >
     );
 };
 
-export default LatestBoyans;
+export default LatestQA;

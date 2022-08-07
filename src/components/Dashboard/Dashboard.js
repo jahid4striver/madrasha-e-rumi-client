@@ -13,8 +13,10 @@ const Dashboard = () => {
                 <label for="my-drawer-2" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content bg-blue-300">
                     {/* <!-- Sidebar content here --> */}
-                    <li><Link to='/dashboard/addcategory'>বিভাগ যোগ করুন</Link></li>
-                    <li><Link to='/dashboard/addaudio'>ওডিও যোগ করুন</Link></li>
+                    <li><Link to='/dashboard/addcategory'>বয়ানের বিভাগ যোগ করুন</Link></li>
+                    <li><Link to='/dashboard/add_qa_category'>প্রশ্ন-উত্তর বিভাগ যোগ করুন</Link></li>
+                    <li><Link to='/dashboard/addaudio'>বয়ানের ওডিও যোগ করুন</Link></li>
+                    <li><Link to='/dashboard/add_qa_audio'>প্রশ্ন-উত্তর ওডিও যোগ করুন</Link></li>
                 </ul>
 
             </div>

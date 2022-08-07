@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-const AddAudio = () => {
+const AddQAAudio = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/getcategories')
+        fetch('http://localhost:5000/get_qa_categories')
             .then(res => res.json())
             .then(data => {
                 setCategories(data);
@@ -50,14 +50,8 @@ const AddAudio = () => {
     }
     return (
         <div>
-            <h1 className='text-3xl border-b-4 border-accent mt-28 lg:mr-16 inline-block'>একটি নতুন বয়ানের ওডিও যোগ করুন</h1>
+            <h1 className='text-3xl border-b-4 border-accent mt-28 lg:mr-16 inline-block'>একটি নতুন প্রশ্ন-উত্তরের ওডিও যোগ করুন</h1>
             <form onSubmit={handleAddAudio} className='mt-8 ml-16 lg:ml-80'>
-                <div class="form-control w-full max-w-xs">
-                    <label class="label">
-                        <span class="label-text">তারিখ বাছাই করুন</span>
-                    </label>
-                    <input name='date' type="date" placeholder="তারিখ" class="input input-bordered w-full max-w-xs" />
-                </div>
                 <div class="form-control w-full max-w-xs">
                     <label class="label">
                         <span class="label-text">বিভাগ বাছাই করুন</span>
@@ -70,15 +64,9 @@ const AddAudio = () => {
                 </div>
                 <div class="form-control w-full max-w-xs">
                     <label class="label">
-                        <span class="label-text">ওডিও নাম</span>
+                        <span class="label-text">প্রশ্ন</span>
                     </label>
-                    <input name='name' type="text" placeholder="ওডিও নাম" class="input input-bordered w-full max-w-xs" />
-                </div>
-                <div class="form-control w-full max-w-xs">
-                    <label class="label">
-                        <span class="label-text">বয়ানের স্থান</span>
-                    </label>
-                    <input name='place' type="text" placeholder="বয়ানের স্থান" class="input input-bordered w-full max-w-xs" />
+                    <input name='question' type="text" placeholder="প্রশ্ন লিখুন" class="input input-bordered w-full max-w-xs" />
                 </div>
                 <div class="form-control w-full max-w-xs">
                     <label class="label">
@@ -86,12 +74,6 @@ const AddAudio = () => {
                     </label>
                     <input name='link' type="text" placeholder="ওডিও লিংক" class="input input-bordered w-full max-w-xs" />
                 </div>
-                {/* <div class="form-control w-full max-w-xs">
-                    <label class="label">
-                        <span class="label-text">ডাউনলোড লিংক</span>
-                    </label>
-                    <input name='category' type="text" placeholder="ডাউনলোড লিংক" class="input input-bordered w-full max-w-xs" />
-                </div> */}
                 <div class="form-control w-full max-w-xs">
                     <label class="label">
                         <span class="label-text">বিবরণ</span>
@@ -99,33 +81,10 @@ const AddAudio = () => {
                     <textarea name='description' class="textarea textarea-bordered" placeholder="বিবরণ লিখুন"></textarea>
                 </div>
 
-                <button className='btn btn-md btn-accent text-white my-4 rounded-md mr-16 lg:mr-96' type='submit'>ওডিও যোগ করুন</button>
+                <button className='btn btn-md btn-accent text-white my-4 rounded-md mr-16 lg:mr-96' type='submit'>প্রশ্ন যোগ করুন</button>
             </form>
-
-            {/* <div class="overflow-x-auto my-8">
-                <table class="table w-full">
-                    <thead>
-                        <tr>
-                            <th>SL#</th>
-                            <th>Category Name</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        {
-                            categories.map((category, index) => <tr>
-                                <td>{index + 1}</td>
-                                <td>{category.categoryName}</td>
-                                <td><button className='btn btn-xs btn-danger'>Delete</button></td>
-                            </tr>)
-                        }
-
-                    </tbody>
-                </table>
-            </div> */}
         </div>
     );
 };
 
-export default AddAudio;
+export default AddQAAudio;

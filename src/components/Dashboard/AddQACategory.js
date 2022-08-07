@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-const AddCategory = () => {
+const AddQACategory = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/getcategories')
+        fetch('http://localhost:5000/get_qa_categories')
             .then(res => res.json())
             .then(data => {
                 setCategories(data);
@@ -17,7 +17,7 @@ const AddCategory = () => {
         console.log(categoryName);
         const cateData = { categoryName }
 
-        fetch('http://localhost:5000/categories', {
+        fetch('http://localhost:5000/qa_categories', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -33,7 +33,7 @@ const AddCategory = () => {
     }
     return (
         <div>
-            <h1 className='text-3xl border-b-4 border-accent mt-28 lg:mr-16 inline-block'>একটি নতুন বয়ানের বিভাগ যোগ করুন</h1>
+            <h1 className='text-3xl border-b-4 border-accent mt-28 lg:mr-16 inline-block'>একটি নতুন প্রশ্ন-উত্তর বিভাগ যোগ করুন</h1>
             <form onSubmit={handleAddCategory} className='mt-16 ml-16 lg:ml-80'>
                 <div class="form-control w-full max-w-sm ">
                     <label class="label">
@@ -54,15 +54,15 @@ const AddCategory = () => {
                         </tr>
                     </thead>
                     <tbody>
-                       
+
                         {
-                            categories.map((category, index)=><tr>
-                                <td>{index+1}</td>
+                            categories.map((category, index) => <tr>
+                                <td>{index + 1}</td>
                                 <td>{category.categoryName}</td>
                                 <td><button className='btn btn-xs btn-error text-white'>মুছে ফেলুন</button></td>
                             </tr>)
                         }
-                        
+
                     </tbody>
                 </table>
             </div>
@@ -70,4 +70,4 @@ const AddCategory = () => {
     );
 };
 
-export default AddCategory;
+export default AddQACategory;
