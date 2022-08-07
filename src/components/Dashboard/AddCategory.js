@@ -33,15 +33,15 @@ const AddCategory = () => {
     }
     return (
         <div>
-            <h1 className='text-3xl border-b-4 border-orange-600 mt-8'>একটি নতুন বিভাগ যোগ করুন</h1>
-            <form onSubmit={handleAddCategory} className='mt-16'>
-                <div class="form-control w-full max-w-xs">
+            <h1 className='text-3xl border-b-4 border-accent mt-28 inline-block'>একটি নতুন বিভাগ যোগ করুন</h1>
+            <form onSubmit={handleAddCategory} className='mt-16 ml-16 lg:ml-80'>
+                <div class="form-control w-full max-w-sm ">
                     <label class="label">
                         <span class="label-text">বিভাগের নাম</span>
                     </label>
                     <input name='category' type="text" placeholder="বিভাগের নাম লিখুন" class="input input-bordered w-full max-w-xs" />
                 </div>
-                <button className='btn btn-md btn-accent text-white mt-4 rounded-md' type='submit'>বিভাগ যোগ করুন</button>
+                <button className='btn btn-md btn-accent text-white mt-4 rounded-md mr-20 lg:mr-96 ' type='submit'>বিভাগ যোগ করুন</button>
             </form>
 
             <div class="overflow-x-auto my-8">
